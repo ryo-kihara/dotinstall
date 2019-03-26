@@ -1,0 +1,77 @@
+body{
+  background: #ccc;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+}
+
+.container{
+  width: 500px;
+  margin: 25px auto;
+}
+
+#price,
+#num,
+#unit{
+  font-size: 14px;
+  box-sizing: border-box;
+  padding: 10px;
+  height: 40px;  /*borderとpaddingを含めたheightになる*/
+  border-radius: 5px;
+  border: none;
+  margin-right: 10px;
+}
+
+#price{
+  width: 140px;  /*borderとpaddingを含めたwidthになる*/
+}
+
+#num, #unit{
+  width: 110px;
+}
+
+#btn{
+  cursor: pointer;
+  display: inline-block;  /*inline-blockで検索！（ここで”計算”が横に並ぶ）*/
+  box-sizing: border-box;
+  width: 110px;
+  height: 40px;
+  padding: 10px;
+  background: #3897fd;
+  border-radius: 5px;
+  font-size: 14px;
+  text-align: center;
+  color: #fff;
+}
+
+.input-area{
+  font-size: 0;     /*なぜ親要素にこれをつけるかというと、inline-blockを設定した要素そのものが「文字」の特徴を持ち合わせているから*/
+  margin-bottom: 20px;
+}
+
+.result-area{
+  background: #f8f8f8;
+  padding: 10px;
+  height: 130px;
+  border-radius: 5px;
+  position: relative;
+}
+
+#result{
+  margin: 0;
+}
+
+#reset{
+  text-decoration: underline;
+  cursor: pointer;
+  position: absolute;   /*親要素にrelativeをpositionに指定することで絶対配置できる*/
+  bottom: 10px;
+  right: 10px;
+}
+
+#reset.hidden{
+  display: none;
+}
+
+#btn.disabled{
+  opacity: 0.5;
+}
