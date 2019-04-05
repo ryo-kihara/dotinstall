@@ -1,0 +1,43 @@
+body{
+  font-family: 'Courier New', sans-serif;
+  font-size: 14px;
+  background: #eee;
+}
+
+.container{
+  width: 365px;
+  text-align: center;
+  margin: 20px auto;
+  background: #fff;
+  padding: 15px;
+}
+
+#time{
+  background: #ddd;
+  height: 120px;
+  line-height: 120px;
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.buttons > div{
+  cursor: pointer;
+  user-select: none;
+  width: 80px;
+  background: #ddd;
+  height: 45px;
+  line-height: 45px;
+  float: left;
+}
+
+.buttons{
+  overflow: hidden;
+}
+
+.buttons > div + div{
+  margin-left: 15px;
+}
+
+.buttons > div{
+  opacity: 0.7;
+}

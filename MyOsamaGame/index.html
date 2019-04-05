@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>王様ゲーム</title>
+  </head>
+  <body>
+    <h1>王様ゲーム</h1>
+    <label for="num">人数: </label><input type="text" placeholder="人数" id="num">
+    <input type="button" value="王様曰く" onclick="getGame();">
+    <p><span id="person1">？</span>の人が<span id="person2">？</span>の人に<span id="game">〇〇〇〇</span>をしなさい。</p>
+  </body>
+  <script>
+    function getGame(){
+      // 要素の取得
+      var num = parseInt(document.getElementById('num').value);
+      var person1 = document.getElementById('person1');
+      var person2 = document.getElementById('person2');
+
+      // 結果の2人
+      var p1;
+      var p2;
+
+      //ゲームの種類
+      var instruction = ["キス", "ビンタ", "握手"];
+      var i = Math.floor(Math.random() * 3);
+
+      // プレイヤー同士の重複がなくなるまで
+      while (p1 === p2) {
+        if (num === 1) {
+          p1 = 1;
+          p2 = 1;
+          break;
+        }else{
+          var p1 = Math.floor(Math.random() * num + 1);
+          var p2 = Math.floor(Math.random() * num + 1);
+        }
+      }
+
+      // 要素のテキストを書き換え
+      person1.innerHTML = "#" + p1;
+      person2.innerHTML = "#" + p2;
+      document.getElementById('game').textContent = instruction[i];
+
+
+    }
+  </script>
+</html>
